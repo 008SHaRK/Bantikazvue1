@@ -4,12 +4,15 @@
     <router-view />
     <Footer />
   </div>
+    <Profile />
 </template>
 
 <script setup>
 import { ref, provide } from 'vue'
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
+
+
 
 const basketCount = ref(0)
 const basketItems = ref([])

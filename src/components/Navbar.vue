@@ -10,7 +10,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
       <div class="container-fluid d-flex flex-column p-0">
 
-        <!-- Top Info Row -->
+      
         <div class="w-100 d-flex justify-content-between align-items-center px-3 py-2 bg-light-subtle small">
           <div class="d-flex align-items-center gap-2">
             <img src="https://flagcdn.com/16x12/az.png" alt="AZ" />
@@ -27,7 +27,7 @@
           </div>
         </div>
 
-        <!-- Middle Row -->
+   
         <div class="w-100 d-flex align-items-center justify-content-between px-3 py-2">
           <div class="d-flex align-items-center">
             <button class="btn btn-outline-danger d-flex align-items-center gap-2">
@@ -40,16 +40,23 @@
             <button class="btn btn-danger"><i class="bi bi-search"></i></button>
           </div>
 
-          <div class="d-flex align-items-center gap-3">
-            <router-link to="/login" class="nav-link">
-              <i class="bi bi-person"></i> Giriş
-            </router-link>
-            <a href="#"><i class="bi bi-bookmark"></i> Sevimlilər</a>
-          <a href="#" @click.prevent="showModal = true">
-            <i class="bi bi-cart"></i> Səbət
-            <span class="badge bg-danger ms-1">{{ basketCount }}</span>
-          </a>
-          </div>
+     <div class="d-flex align-items-center gap-3">
+  <router-link to="/login" class="nav-link">
+    <i class="bi bi-person"></i> Giriş
+  </router-link>
+
+  <router-link to="/profile" class="nav-link">
+    <i class="bi bi-person-circle"></i> Profil
+  </router-link>
+
+  <a href="#"><i class="bi bi-bookmark"></i> Sevimlilər</a>
+
+  <a href="#" @click.prevent="showModal = true">
+    <i class="bi bi-cart"></i> Səbət
+    <span class="badge bg-danger ms-1">{{ basketCount }}</span>
+  </a>
+</div>
+
         </div>
 
         <!-- Bottom Menu -->

@@ -63,8 +63,6 @@ const registerUser = () => {
     alert('Şifrələr eyni deyil!')
     return
   }
-
-  // Əlavə: email doğrulama kodu göndərmə (aşağıda izah olunacaq)
   sendVerificationEmail(email.value)
 }
 </script>
