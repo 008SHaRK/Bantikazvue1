@@ -5,12 +5,14 @@
     <Footer />
   </div>
     <Profile />
+     <Shop />
 </template>
 
 <script setup>
 import { ref, provide } from 'vue'
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
+
 
 
 
@@ -26,3 +28,5 @@ provide('basketCount', basketCount)
 provide('addToBasket', addToBasket)
 provide('basketItems', basketItems)
 </script>
+
+

@@ -102,9 +102,10 @@
 
           <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap" id="yeni-mehsul">
             <h2 class="mb-0 fs-4 fw-bold">Yeni Məhsullarımız</h2>
-            <a href="#" class="text-danger fw-semibold text-decoration-none">
-              Bütün məhsullar <i class="bi bi-arrow-right-short"></i>
-            </a>
+        <router-link to="/shop" class="text-danger fw-semibold text-decoration-none">
+  Bütün məhsullar <i class="bi bi-arrow-right-short"></i>
+</router-link>
+
           </div>
            </div>
     </section>
