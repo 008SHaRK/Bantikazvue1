@@ -514,7 +514,8 @@ padding-bottom: 21px;
 font-size: small;
 }
 .kart{
-  margin-left: 50px;
+  margin-left: 30px;
+  margin-bottom: 20px;
 }
 
 .duyme-sebete {
