@@ -582,18 +582,7 @@
     </div>
    </dic>
   </section>
- <section class="elaqe-banner">
 
-  <div class="sol">
-    <h2>Xidmətlərimizdən <br> yararlanmaq üçün:</h2>
-  </div>
-
-  <div class="sag">
-    <div class="nomre">+99477-200-77-77</div>
-    <p class="destek">texniki dəstəklə danış</p>
-  </div>
-
-  </section>
 
 
 

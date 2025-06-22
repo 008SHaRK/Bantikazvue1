@@ -1,4 +1,16 @@
 <template>
+   <section class="elaqe-banner">
+
+  <div class="sol">
+    <h2>Xidmətlərimizdən <br> yararlanmaq üçün:</h2>
+  </div>
+
+  <div class="sag">
+    <div class="nomre">+99477-200-77-77</div>
+    <p class="destek">texniki dəstəklə danış</p>
+  </div>
+
+  </section>
     <div class="container">
        <!-- footer start -->
        <footer class="section-p1">
@@ -44,6 +56,62 @@
 </template>
 
  <style scoped>
+ .elaqe-banner {
+  margin-left: 100px;
+  width: 1316px;
+  
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px 120px;
+  background-color: #E40046;
+  color: white;
+  overflow: hidden;
+}
+
+
+.elaqe-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('/img/b7e77854ec69103843bc020495e88a077962896a.png') no-repeat center;
+  background-size: cover;
+  opacity: 0.15;
+  z-index: 0;
+}
+
+.sol h2 {
+  font-size: 36px;
+  line-height: 1.4;
+  font-weight: 500;
+  z-index: 1;
+  position: relative;
+  margin: 0;
+}
+
+.sag {
+  z-index: 1;
+  position: relative;
+  text-align: center;
+}
+
+.nomre {
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+  padding: 14px 30px;
+  border: 3px solid black;
+  border-radius: 40px;
+  display: inline-block;
+  background-color: transparent;
+}
+
+.destek {
+  margin-top: 12px;
+  font-size: 14px;
+  color: white;
+}
  footer {
   display: flex;
   flex-wrap: wrap;
@@ -51,8 +119,9 @@
   margin-top: 9 px;
   background-color: #da1247;
   padding-top: 10px;
-  margin-left: 5.5px;
-  padding-left: 14px;
+  padding-inline-start: 22px;
+
+
 }
 
 footer .col {
