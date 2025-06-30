@@ -5,6 +5,8 @@ import Login from '../views/Login.vue'
 import Register from '../views/Register.vue' 
 import Profile from '../views/Profile.vue'
 import Shop from '../views/Shop.vue'
+import ProductDetails from '../views/ProductDetails.vue'
+
 
 
 
@@ -24,6 +26,13 @@ const routes = [
     name: 'Register',
     component: Register
   },
+   {
+ path: '/product-details/:id',
+  name: 'ProductDetails',
+ component: () => import('../views/ProductDetails.vue'), 
+
+},
+
      { path: '/profile', component: Profile },
 
         {

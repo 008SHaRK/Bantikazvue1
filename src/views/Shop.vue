@@ -53,8 +53,11 @@
   v-for="(product, index) in filteredProducts"
   :key="'filtered' + index"
 >
+
   <div class="kart p-3 border rounded-3 text-center">
+  <router-link :to="`/product-details/${product.id}`">
     <img :src="product.image" class="img-fluid mb-3" alt="Məhsul Şəkli">
+       </router-link>
     <h6 class="mehsul-ad text-truncate">
       {{ product.name }}
     </h6>
@@ -75,12 +78,12 @@
     </div>
   </div>
 </div>
-
+ 
         </div>
 
         <!-- Filterlənmiş nəticələr -->
         <h6 class="mt-4">Çeşidləməyə görə Makiyaj məhsulları - {{ filteredProducts.length }} ədəd</h6>
-        <div class="row">
+    
           <div
             class="col-6 col-sm-4 col-md-3 col-lg-2 mehsul-karti"
             v-for="(product, index) in filteredProducts"
@@ -105,6 +108,7 @@
             </div>
           </div>
         </div>
+    
 
        <!-- Pagination -->
 <nav aria-label="Page navigation" class="d-flex justify-content-center mt-4" id="pageshop">
@@ -124,7 +128,7 @@
 
       </div>
     </div>
-  </div>
+
 <section class="en-cox-satilanlar mt-5">
   <div class="container position-relative">
     <h3 class="fw-bold mb-4">Bugün ən çox satılanlar</h3>
@@ -185,6 +189,7 @@ export default {
     allBrands: ['Ziaja', 'Eveline', 'Neutrogena'],
     allProducts: [
       {
+          id: '1',
         name: 'Eveline Royal Snail Oil Body Lotion Intensely',
         category: 'Günəş kremi',
         price: 22.10,
@@ -193,6 +198,7 @@ export default {
         brand: 'Eveline'
       },
   {
+      id: '1',
         name: 'Eveline Royal Snail Oil Body Lotion Intensely',
         category: 'Günəş kremi',
         price: 35.10,
@@ -201,6 +207,7 @@ export default {
         brand: 'Ziaja'
       },
        {
+          id: '1',
         name: 'Eveline Royal Snail Oil Body Lotion Intensely',
         category: 'Günəş kremi',
         price: 22.10,
@@ -209,6 +216,7 @@ export default {
         brand: 'Eveline'
       },
        {
+          id: '1',
         name: 'Eveline Royal Snail Oil Body Lotion Intensely',
         category: 'Günəş kremi',
         price: 10.10,
@@ -220,6 +228,7 @@ export default {
 
 
        {
+          id: '1',
         name: 'Eveline Royal Snail Oil Body Lotion Intensely',
         category: 'Günəş kremi',
         price: 222.10,
@@ -228,6 +237,7 @@ export default {
         brand: 'Eveline'
       },
        {
+          id: '1',
         name: 'Eveline Royal Snail Oil Body Lotion Intensely',
         category: 'Günəş kremi',
         price: 225.10,
@@ -236,6 +246,7 @@ export default {
         brand: 'Eveline'
       },
        {
+          id: '1',
         name: 'Eveline Royal Snail Oil Body Lotion Intensely',
         category: 'Günəş kremi',
         price: 5.10,
@@ -244,6 +255,7 @@ export default {
         brand: 'Eveline'
       },
        {
+          id: '1',
         name: 'Eveline Royal Snail Oil Body Lotion Intensely',
         category: 'Günəş kremi',
         price: 12.10,
@@ -252,6 +264,7 @@ export default {
         brand: 'Neutrogena'
       },
       {
+          id: '1',
         name: 'Eveline Royal Snail Oil Body Lotion Intensely',
         category: 'Günəş kremi',
         price: 12.10,
@@ -262,6 +275,7 @@ export default {
 
 
       {
+          id: '1',
         name: 'Eveline Royal Snail Oil Body Lotion Intensely',
         category: 'Günəş kremi',
         price: 12.10,
@@ -270,6 +284,7 @@ export default {
         brand: 'Neutrogena'
       },
       {
+          id: '1',
         name: 'Eveline Royal Snail Oil Body Lotion Intensely',
         category: 'Günəş kremi',
         price: 89.90,
@@ -278,6 +293,7 @@ export default {
         brand: 'Neutrogena'
       },
       {
+          id: '1',
         name: 'Eveline Royal Snail Oil Body Lotion Intensely',
         category: 'Günəş kremi',
         price: 22.10,
@@ -286,6 +302,7 @@ export default {
         brand: 'Neutrogena'
       },
         {
+            id: '1',
         name: 'Eveline Royal Snail Oil Body Lotion Intensely',
         category: 'Günəş kremi',
         price: 22.10,
@@ -294,6 +311,7 @@ export default {
         brand: 'Neutrogena'
       },
         {
+            id: '1',
         name: 'Eveline Royal Snail Oil Body Lotion Intensely',
         category: 'Günəş kremi',
         price: 22.10,
@@ -302,6 +320,7 @@ export default {
         brand: 'Neutrogena'
       },
         {
+            id: '1',
         name: 'Eveline Royal Snail Oil Body Lotion Intensely',
         category: 'Günəş kremi',
         price: 22.10,
@@ -310,6 +329,7 @@ export default {
         brand: 'Neutrogena'
       },
         {
+            id: '1',
         name: 'Eveline Royal Snail Oil Body Lotion Intensely',
         category: 'Günəş kremi',
         price: 22.10,
@@ -318,6 +338,7 @@ export default {
         brand: 'Neutrogena'
       },
         {
+            id: '1',
         name: 'Eveline Royal Snail Oil Body Lotion Intensely',
         category: 'Günəş kremi',
         price: 22.10,
@@ -327,6 +348,7 @@ export default {
       },
 
       {
+          id: '1',
         name: 'Eveline Royal Snail Oil Body Lotion Intensely',
         category: 'Günəş kremi',
         price: 12.10,
@@ -335,6 +357,7 @@ export default {
         brand: 'Neutrogena'
       },
       {
+          id: '1',
         name: 'Eveline Royal Snail Oil Body Lotion Intensely',
         category: 'Günəş kremi',
         price: 12.10,
@@ -343,6 +366,7 @@ export default {
         brand: 'Neutrogena'
       },
       {
+          id: '1',
         name: 'Eveline Royal Snail Oil Body Lotion Intensely',
         category: 'Günəş kremi',
         price: 32.10,
@@ -351,6 +375,7 @@ export default {
         brand: 'Neutrogena'
       },
        {
+          id: '1',
         name: 'Eveline Royal Snail Oil Body Lotion Intensely',
         category: 'Günəş kremi',
         price: 23.10,

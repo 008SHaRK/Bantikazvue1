@@ -6,6 +6,7 @@
   </div>
     <Profile />
      <Shop />
+    
       
 </template>
 
@@ -13,6 +14,7 @@
 import { ref, provide } from 'vue'
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
+import ProductDetails from './views/ProductDetails.vue'
 
 
 
