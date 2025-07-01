@@ -1,64 +1,80 @@
 <template>
   <div v-if="product" class="container py-5">
-    <div class="container py-5">
+    <!-- Məhsul əsas hissə -->
     <div class="row">
-      <!-- Sol: Şəkil -->
+      <!-- Şəkillər -->
       <div class="col-md-4 text-center">
-        <img :src="mainImage" class="img-fluid mb-3" style="max-height: 350px;" />
-        <div class="d-flex flex-column align-items-center">
+        <img :src="product.image" class="img-fluid mb-3" alt="Məhsul Şəkli" />
+        <div class="d-flex justify-content-center gap-2">
           <img
-            v-for="(img, index) in images"
-            :key="index"
-            :src="img"
-            class="img-thumbnail my-1"
-            style="width: 60px; cursor: pointer;"
-            @click="mainImage = img"
+            v-for="(thumb, i) in product.thumbnails"
+            :key="i"
+            :src="thumb"
+            class="img-thumbnail"
+            width="50"
           />
         </div>
       </div>
 
-      <!-- Sağ: Məlumat -->
-      <div class="col-md-8">
-        <div class="d-flex flex-wrap align-items-center mb-2">
-          <button class="btn btn-outline-secondary btn-sm me-2">#YeniMəhsullar</button>
-          <button class="btn btn-outline-secondary btn-sm">#ÇoxSatılanlar</button>
+      <!-- Məhsul məlumatı -->
+      <div class="col-md-5">
+        <h4 class="fw-bold">{{ product.name }}</h4>
+
+        <div class="my-2">
+          <button class="btn btn-light btn-sm me-2">#YeniMəhsullar</button>
+          <button class="btn btn-light btn-sm">#ÇoxSatılanlar</button>
         </div>
 
-        <h4>MEDI-PEEL Algo-Tox Deep Clear</h4>
-
-        <div class="d-flex align-items-center mb-2">
-          <span class="text-warning me-2">★★★★☆</span>
-          <small>685 dəyərləndirmə</small>
+        <div class="d-flex align-items-center my-2">
+          <span class="me-1">★ ★ ★ ★ ☆</span>
+          <span class="text-muted ms-2">{{ product.reviewCount }} dəyərləndirmə</span>
         </div>
 
-        <div class="d-flex align-items-center mb-3">
-          <span class="badge bg-danger me-2">-10%</span>
-          <del class="text-muted me-2">40.00₼</del>
-          <span class="fs-5 fw-bold text-dark">36.00₼</span>
+        <div class="my-3">
+          <span class="text-danger fw-bold me-2">-10%</span>
+          <del class="text-muted me-2">{{ product.originalPrice }}₼</del>
+          <span class="fw-bold fs-5">{{ product.price }}₼</span>
         </div>
 
-        <h6>Məhsul haqqında</h6>
-        <ul>
-          <li>5% bitki ekstraktından hazırlanmış formula təbii detoks effekti verir.</li>
-          <li>Dərinin quruluşunu və səth yağını təmizləyir.</li>
-          <li>İltihabı azaldır, yaraların və sızanaqların sağalmasına kömək edir.</li>
-          <li>Dəri məsamələrini effektiv şəkildə təmizləyir və genişlənmiş məsamələri kiçildir.</li>
-          <li>Həcmi: 150 ml</li>
+        <h6 class="fw-bold mt-4">Məhsul haqqında</h6>
+        <ul class="small">
+          <li>Ən təbii bitki ekstraktlarından hazırlanmış formula təbiət dərinliklərindən gəlir.</li>
+          <li>Dərinin çirklənmədən arınma gücü, makiyaj təmizliyi və ölü dəri hüceyrələrinin sorulması.</li>
+          <li>Genişləmiş dəri çalanlarını təravətləndirir və dəri tonunu bərabərləşdirir.</li>
+          <li>Qızartı, qaralma və səpkilərin sağalma prosesini sürətləndirir.</li>
+          <li>Dərin təmizlik və məsamələri aktiv şəkildə təmizləyir.</li>
         </ul>
+        <a href="#" class="text-danger small">Daha çox</a>
+      </div>
 
-        <div class="d-flex align-items-center justify-content-between mt-4 p-3 border rounded-3 bg-light">
-          <div>
-            <span class="text-success">Hal-hazırda stokda</span>
-            <strong class="text-dark">588</strong>
-            <span>ədəd var</span>
+      <!-- Sağ tərəf -->
+      <div class="col-md-3">
+        <div class="border p-3 rounded-4 shadow-sm bg-white">
+          <p class="mb-3 fs-6">
+            Hal-hazırda stokda <span class="text-success fw-bold">688</span> ədəd var
+          </p>
+
+          <div class="d-flex align-items-center bg-light rounded p-2 mb-3">
+    <img src="/img/kapital.png" alt="Kapital Kart" width="121" height="160" />
+
+            <span class="fw-semibold">6.57 ₼ / ay</span>
           </div>
-          <button class="btn btn-danger">Səbətə əlavə et</button>
+
+          <ul class="list-unstyled small text-secondary mb-3">
+            <li class="mb-1">✔ 100% orijinal məhsul</li>
+            <li class="mb-1">✔ Pulsuz çatdırılma</li>
+            <li class="mb-1">✔ Qapıda ödəniş</li>
+          </ul>
+
+          <button class="btn btn-danger w-100 py-2 fw-semibold" @click="addToCart">
+            Səbətə əlavə et
+          </button>
         </div>
       </div>
     </div>
-  </div>
 
-    <div class="mb-5">
+    <!-- Rəy yaz -->
+    <div class="mt-5">
       <h4 class="mb-3">Məhsula olan fikrinizi bildirin</h4>
       <textarea
         v-model="userComment"
@@ -69,7 +85,8 @@
       <button class="btn btn-danger" @click="submitComment">Göndər</button>
     </div>
 
-    <div class="mb-5">
+    <!-- Rəylər -->
+    <div class="mt-5">
       <h5 class="mb-3">Rəylər</h5>
       <div
         v-for="(comment, index) in comments"
@@ -85,7 +102,8 @@
       </div>
     </div>
 
-    <div>
+    <!-- Ən çox satılanlar -->
+    <div class="mt-5">
       <h4 class="mb-3">Bu gün ən çox satılanlar</h4>
       <div class="d-flex overflow-auto gap-3 pb-3">
         <div
@@ -133,18 +151,16 @@ const products = [
     isDiscounted: true,
     rating: 4.3,
     reviewCount: 18,
-    originalPrice: 35,
-    price: 30,
-    description:
-      'Məhsul haqqında qısa təsvir. Bu sahə məhsulun xüsusiyyətlərini əks etdirir və istifadəçiyə məlumat verir.',
+    originalPrice: 40,
+    price: 36,
+    description: 'Qısa məhsul təsviri...',
   },
-  // İstəyə görə əlavə məhsullar əlavə edə bilərsən
 ]
 
 const product = ref(null)
 
 onMounted(() => {
-  product.value = products.find(p => p.id == productId)
+  product.value = products.find(p => p.id === productId)
 })
 
 const comments = ref([
@@ -175,19 +191,10 @@ const bestSellers = ref([
     rating: 4.8,
     image: '/img/487eda6a280362fa31ec27beb34f0b9f457ed712.png',
   },
-  {
-    id: '104',
-    name: 'Lip Balm',
-    price: 15.0,
-    rating: 4.4,
-    image: '/img/487eda6a280362fa31ec27beb34f0b9f457ed712.png',
-  },
 ])
-
 function addToCart() {
   alert(`"${product.value?.name}" səbətə əlavə edildi!`)
 }
-
 function submitComment() {
   if (!userComment.value.trim()) {
     alert('Zəhmət olmasa, fikrinizi yazın.')
@@ -212,5 +219,9 @@ ul {
 .card img {
   height: 180px;
   object-fit: cover;
+}
+img[alt="Kart"] {
+  object-fit: contain;
+  border-radius: 6px;
 }
 </style>
