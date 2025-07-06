@@ -44,7 +44,7 @@
       </div>
 
       <!-- Məhsul Siyahısı -->
-      <div class="col-md-10">
+      <div class="col-md-10 row">
         <!-- Ən çox satılanlar -->
         <h5 class="mt-2 fw-bold">Makiyaj məhsullarında ən çox satılanlar</h5>
         <div class="row">
@@ -69,7 +69,7 @@
     <div class="d-flex align-items-center gap-2">
       <button class="duyme-sebete"
         @click="addToBasket(product)">
-        <i class="bi bi-bag-dash"></i>
+        <i class="bi bi-bag-dash "></i>
         <br> Səbətə at
       </button>
       <button class="duyme-sevimli">
@@ -82,10 +82,10 @@
         </div>
 
         <!-- Filterlənmiş nəticələr -->
-        <h6 class="mt-4">Çeşidləməyə görə Makiyaj məhsulları - {{ filteredProducts.length }} ədəd</h6>
+        <h6 class="mt-4 row">Çeşidləməyə görə Makiyaj məhsulları - {{ filteredProducts.length }} ədəd</h6>
     
           <div
-            class="col-6 col-sm-4 col-md-3 col-lg-2 mehsul-karti"
+            class="col-6 col-sm-4 col-md-3 col-lg-2 mehsul-karti row"
             v-for="(product, index) in filteredProducts"
             :key="'filtered' + index"
           >
@@ -618,7 +618,7 @@ font-size: small;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: #000;
+  background: #FDC5D0;
   color: white;
   border: none;
   border-radius: 50%;

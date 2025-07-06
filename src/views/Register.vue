@@ -1,13 +1,12 @@
-
 <template>
   <div class="container py-5">
     <h3>Hesabınıza daxil olun</h3>
     <p class="text-muted">
-      Hesabınıza daxil olaraq, gündəlik ehtiyaclarınızı əldə edə və sifarişlərinizi istənilən vaxtı rəsmiləşdirə bilərsiniz.
+      Hesabınıza daxil olaraq, gündəlik ehtiyaclarınızı əldə edə və sifarişlərinizi istənilən vaxt rəsmiləşdirə bilərsiniz.
     </p>
 
     <div class="row mt-4">
-      <!-- Form hissəsi -->
+      <!-- Qeydiyyat formu -->
       <div class="col-md-6 bg-light p-4 rounded">
         <h6>İlk öncə şəxsi məlumatlarınızı yazın:</h6>
         <form @submit.prevent="registerUser">
@@ -33,7 +32,8 @@
         </form>
 
         <div class="mt-3 text-center">
-          Artıq hesabınız var? <router-link to="/login" class="text-danger text-decoration-none">Giriş edin!</router-link>
+          Artıq hesabınız var? 
+          <router-link to="/login" class="text-danger text-decoration-none">Giriş edin!</router-link>
         </div>
       </div>
 
@@ -63,7 +63,8 @@ const registerUser = () => {
     alert('Şifrələr eyni deyil!')
     return
   }
-  sendVerificationEmail(email.value)
+
+  console.log('İstifadəçi qeydiyyatdan keçdi:', name.value, email.value)
 }
 </script>
 
